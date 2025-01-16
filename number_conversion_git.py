@@ -28,7 +28,7 @@ def float_to_sci_str(number: float, decimal_places: int, unit:str) -> str:
                   10**-12: "p",
                   10**-15: "f"}
     
-    if number < 1000 and number >= 1: #no prefix
+    if number < 1000 and number >= 1 or unit == "%": #no prefix
         sci_str_number = sign + str(round(number,decimal_places)) + unit
         return sci_str_number
     
